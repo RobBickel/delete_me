@@ -5,10 +5,13 @@
 name: Release
 
 on:
+  workflow_dispatch:
   push:
-    tags:
-      - "v*.*.*"
-      - "v*.*"
+    paths:
+    - "pcb/*.kicad_sch"
+    - "pcb/*.kicad_pcb"
+    - "pcb/*.kicad_pro"
+    - "**/*kibot.yml"
       
 jobs:
   build:
